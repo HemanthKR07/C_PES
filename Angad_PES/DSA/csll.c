@@ -33,6 +33,65 @@ void insertAtBeginning(struct Node** head, int data) {
     }
 }
 
+void deleteAtPos(struct Node** head, int pos) {
+    if (*head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+    struct Node* curr = *head;
+    struct Node* prev = NULL;
+    int count = 1;
+    while (count != pos) {
+        if (curr->next == *head) {
+            printf("Position out of range!\n");
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+        count++;
+    }
+    if (curr == *head && curr->next == *head) {
+        *head = NULL;
+        free(curr);
+        return;
+    }
+    if (curr == *head) {
+        prev = *head;
+        while (prev->next != *head) {
+            prev = prev->next;
+        }
+        *head = (*head)->next;
+        prev->next = *head;
+        free(curr);
+    } else if (curr->next == *head) {
+        prev->next = *head;
+        free(curr);
+    } else {
+        prev->next = curr->next;
+        free(curr);
+    }
+}
+
+void deleteAtEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+    struct Node* curr = *head;
+    struct Node* prev = NULL;
+    while (curr->next != *head) {
+        prev = curr;
+        curr = curr->next;
+    }
+    if (curr == *head) {
+        *head = NULL;
+        free(curr);
+    } else {
+        prev->next = *head;
+        free(curr);
+    }
+}
+
 void insertAtEnd(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -45,6 +104,22 @@ void insertAtEnd(struct Node** head, int data) {
         }
         temp->next = newNode;
         newNode->next = *head;
+    }
+}
+
+void insertAtBeginning(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+    if (*head == NULL) {
+        newNode->next = newNode;
+        *head = newNode;
+    } else {
+        struct Node* temp = *head;
+        while (temp->next != *head) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        newNode->next = *head;
+        *head = newNode;
     }
 }
 
