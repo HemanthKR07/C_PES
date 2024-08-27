@@ -1,0 +1,46 @@
+$date
+	Tue Aug 20 15:06:45 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module halfadder_test $end
+$scope module halfadder_test $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$var wire 1 $ s $end
+$scope module g1 $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # y $end
+$upscope $end
+$scope module g2 $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 $ y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#100
+1$
+1"
+#200
+0"
+1!
+#300
+1#
+0$
+1"
+#400

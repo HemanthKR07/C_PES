@@ -1,0 +1,75 @@
+$date
+	Tue Aug 20 14:09:42 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module simp03_test $end
+$scope module simp03_test $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$var wire 1 $ w1 $end
+$var wire 1 % w2 $end
+$var wire 1 & w3 $end
+$var wire 1 ' y $end
+$scope module g1 $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ y $end
+$upscope $end
+$scope module g2 $end
+$var wire 1 $ a $end
+$var wire 1 ! b $end
+$var wire 1 % y $end
+$upscope $end
+$scope module g3 $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 & y $end
+$upscope $end
+$scope module g4 $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var wire 1 ' y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#100
+1#
+#200
+0#
+1"
+#300
+1'
+1%
+1$
+1#
+#400
+0$
+0#
+0"
+1!
+#500
+1#
+#600
+1&
+0#
+1"
+#700
+1$
+1#
