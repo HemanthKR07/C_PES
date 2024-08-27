@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h1>
+            Strings Methods
+        </h1>
+        <script>
+            let text="Hello World!";
+            document.write(text+"<br>");
+            document.write("Length of the string: "+text.length+"<br>");
+            document.write("char at 4th index: "+text.charAt(4)+"<br>");
+            document.write("CharCode at 4th index: "+text.charCodeAt(4)+"<br>");
+            document.write("Index of 'o': "+text.indexOf("o")+"<br>");  
+            document.write("SubStr"+text.substr(2,5)+"<br>");
+            let text2="Hello";
+            document.write("Concatenation: "+text.concat(text2)+"<br>");
+            document.write("toUpper: "+text.toUpperCase()+"<br>");
+            document.write("toLower: "+text.toLowerCase()+"<br>");
+            x = setInterval(function() {
+                document.write("Date: "+new Date()+"<br>");
+            }, 1000);
+        </script>
+    </body>
+</html>
