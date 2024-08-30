@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <div id="div1">QuerySelectorAll
+            <h2 class="demo">Heading</h2>
+            <p class="demo">Hello all</p>
+        </div>
+        <script>
+            let x = document.getElementById("div1")
+            let a = x.querySelectorAll(".demo")
+            a[0].innerHTML="modified p content"
+        </script>
+    </body>
+</html>
