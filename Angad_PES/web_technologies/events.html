@@ -1,17 +1,40 @@
 <html>
     <body>
-        <p id="p1" onmousedown="func1()" onmouseup="func2()">
+        <p id="p1" onmousedown="func3()" onmouseup="func2()">
             Mouse event Listener
         </p>
+        <button onclick="func1()">Click Me</button>
+
+        <style>
+            #MyDiv1, #MyDiv2{
+                background-color: coral;
+                padding: 50px;
+            }
+
+            #myP1, #myP2{
+                background-color: white;
+                font-size: 20px;
+                border: 1px solid;
+                padding: 20px;
+            }
+        </style>
+
+        <div id="MyDiv1" onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='coral'">
+            <p id="myP1">Mouse Over</p>
+        </div>
     </body>
     <script>
         function func1(){
             let x = document.getElementById('p1');
-            x.innerText = x.innerHTML.toUpperCase();
+            x.innerText = x.innerText.toUpperCase();
         }
         function func2(){
             let x = document.getElementById('p1');
             x.innerHTML = "Mouse Up";
+        }
+        function func3(){
+            let x = document.getElementById('p1');
+            x.innerHTML = "Mouse Down";
         }
     </script>
 </html>
