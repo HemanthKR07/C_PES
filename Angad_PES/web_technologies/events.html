@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <p id="p1" onmousedown="func1()" onmouseup="func2()">
+            Mouse event Listener
+        </p>
+    </body>
+    <script>
+        function func1(){
+            let x = document.getElementById('p1');
+            x.innerText = x.innerHTML.toUpperCase();
+        }
+        function func2(){
+            let x = document.getElementById('p1');
+            x.innerHTML = "Mouse Up";
+        }
+    </script>
+</html>
