@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indian Budget 2024 Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Indian Budget 2024 Survey Form</h1>
+
+    <h2>Indian Budget 2024 Highlights</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Highlights</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Category 1</td>
+                <td>Highlight 1</td>
+            </tr>
+            <tr>
+                <td>Category 2</td>
+                <td>Highlight 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>List of Schemes</h2>
+    <ul>
+        <li>Scheme 1</li>
+        <li>Scheme 2</li>
+        <!-- Add more list items as needed -->
+    </ul>
+
+    <a href="detailed_information.html">More detailed information on the budget</a>
+
+    <form id="feedbackForm" onsubmit="submitForm(event)">
+        <h2>Feedback Form</h2>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" required><br>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required><br>
+
+        <label for="state">State:</label><br>
+        <select id="state" required>
+            <option value="default" selected>Select a state</option>
+            <script>
+                var states = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Lakshadweep", "Puducherry"];
+                var selectElement = document.getElementById("state");
+                for (var i = 0; i < states.length; i++) {
+                    var option = document.createElement("option");
+                    option.value = states[i];
+                    option.text = states[i];
+                    selectElement.appendChild(option);
+                }
+            </script>
+        </select><br>
+
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" required></textarea><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            alert("Thank you for your feedback, " + name + "!");
+        }
+    </script>
+</body>
+</html>
