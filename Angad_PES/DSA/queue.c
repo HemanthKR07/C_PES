@@ -1,39 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 100
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
 
 typedef struct {
-    int data[MAX_SIZE];
-    int front;
-    int rear;
+    Node* front;
+    Node* rear;
 } Queue;
 
 void initializeQueue(Queue* queue) {
-    queue->front = -1;
-    queue->rear = -1;
+    queue->front = NULL;
+    queue->rear = NULL;
 }
 
 int isQueueEmpty(Queue* queue) {
-    return (queue->front == -1 && queue->rear == -1);
-}
-
-int isQueueFull(Queue* queue) {
-    return (queue->rear + 1) % MAX_SIZE == queue->front;
+    return (queue->front == NULL);
 }
 
 void enqueue(Queue* queue, int item) {
-    if (isQueueFull(queue)) {
-        printf("Queue is full. Cannot enqueue.\n");
-        return;
-    }
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = item;
+    newNode->next = NULL;
+
     if (isQueueEmpty(queue)) {
-        queue->front = 0;
-        queue->rear = 0;
+        queue->front = newNode;
+        queue->rear = newNode;
     } else {
-        queue->rear = (queue->rear + 1) % MAX_SIZE;
+        queue->rear->next = newNode;
+        queue->rear = newNode;
     }
-    queue->data[queue->rear] = item;
 }
 
 int dequeue(Queue* queue) {
@@ -41,13 +39,17 @@ int dequeue(Queue* queue) {
         printf("Queue is empty. Cannot dequeue.\n");
         return -1;
     }
-    int item = queue->data[queue->front];
-    if (queue->front == queue->rear) {
-        queue->front = -1;
-        queue->rear = -1;
-    } else {
-        queue->front = (queue->front + 1) % MAX_SIZE;
+
+    Node* temp = queue->front;
+    int item = temp->data;
+
+    queue->front = queue->front->next;
+    free(temp);
+
+    if (queue->front == NULL) {
+        queue->rear = NULL;
     }
+
     return item;
 }
 
