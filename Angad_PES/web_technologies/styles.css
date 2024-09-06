@@ -3,3 +3,17 @@ body {
     border-radius: 5px;
     padding: 20px;
 }
+
+h1 {
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#main {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
