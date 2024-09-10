@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic Features</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery Basic Features</h1>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#btn').click(function() {
+                if ($(this).text() === 'Button Clicked') {
+                    $(this).text('Click Me');
+                    $(this).css('background-color', '');
+                    $(this).animate({ fontSize: '16px' }, 1000);
+                } else {
+                    $(this).text('Button Clicked');
+                    $(this).css('background-color', 'green');
+                    $(this).animate({ fontSize: '30px' }, 1000);
+                }
+            });
+
+            var newElement = $('<p>').text('This is a new paragraph');
+            $('body').append(newElement);
+            newElement.hide().fadeIn(2000).animate({ marginLeft: '200px' }, 1500);
+        });
+    </script>
+</body>
+</html>
