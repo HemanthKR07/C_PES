@@ -1,0 +1,143 @@
+$date
+	Tue Aug 27 20:43:00 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module rippleCarryAdder_tb1 $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " cout $end
+$var reg 4 # a [3:0] $end
+$var reg 4 $ b [3:0] $end
+$var reg 1 % cin $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % Cin $end
+$var wire 1 ( cout2 $end
+$var wire 1 ) cout1 $end
+$var wire 1 * cout0 $end
+$var wire 4 + Sum [3:0] $end
+$var wire 1 " Cout $end
+$scope module a1 $end
+$var wire 1 , A $end
+$var wire 1 - B $end
+$var wire 1 % Cin $end
+$var wire 1 * Cout $end
+$var wire 1 . S $end
+$var wire 1 / Sum $end
+$upscope $end
+$scope module a2 $end
+$var wire 1 0 A $end
+$var wire 1 1 B $end
+$var wire 1 * Cin $end
+$var wire 1 ) Cout $end
+$var wire 1 2 S $end
+$var wire 1 3 Sum $end
+$upscope $end
+$scope module a3 $end
+$var wire 1 4 A $end
+$var wire 1 5 B $end
+$var wire 1 ) Cin $end
+$var wire 1 ( Cout $end
+$var wire 1 6 S $end
+$var wire 1 7 Sum $end
+$upscope $end
+$scope module a4 $end
+$var wire 1 8 A $end
+$var wire 1 9 B $end
+$var wire 1 ( Cin $end
+$var wire 1 " Cout $end
+$var wire 1 : S $end
+$var wire 1 ; Sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1;
+z:
+19
+18
+17
+z6
+15
+14
+03
+z2
+11
+00
+0/
+z.
+1-
+0,
+bz +
+1*
+1)
+1(
+b1111 '
+b1100 &
+1%
+b1111 $
+b1100 #
+1"
+bz !
+$end
+#10
+07
+0;
+0)
+0(
+0*
+1/
+01
+05
+04
+0%
+b1001 $
+b1001 '
+b1000 #
+b1000 &
+#20
+17
+1;
+1)
+1(
+13
+1*
+0/
+11
+15
+10
+14
+1%
+b1111 $
+b1111 '
+b1110 #
+b1110 &
+#30
+1"
+1(
+03
+1)
+07
+0;
+1*
+0/
+05
+1,
+00
+08
+0%
+b1011 $
+b1011 '
+b101 #
+b101 &
+#40

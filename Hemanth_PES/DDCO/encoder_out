@@ -1,0 +1,88 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5c88f34bcbf0 .scope module, "encoder_tb" "encoder_tb" 2 1;
+ .timescale 0 0;
+v0x5c88f34e4270_0 .var "a0", 0 0;
+v0x5c88f34e4330_0 .var "a1", 0 0;
+v0x5c88f34e4400_0 .var "a2", 0 0;
+v0x5c88f34e4500_0 .var "a3", 0 0;
+o0x7cc4fa88a0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5c88f34e45d0_0 .net "y0", 0 0, o0x7cc4fa88a0d8;  0 drivers
+v0x5c88f34e46c0_0 .net "y1", 0 0, L_0x5c88f34e4900;  1 drivers
+S_0x5c88f34bcd80 .scope module, "uut" "encoder" 2 6, 3 1 0, S_0x5c88f34bcbf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A0";
+    .port_info 1 /INPUT 1 "A1";
+    .port_info 2 /INPUT 1 "A2";
+    .port_info 3 /INPUT 1 "A3";
+    .port_info 4 /OUTPUT 1 "Y0";
+    .port_info 5 /OUTPUT 1 "Y1";
+v0x5c88f34cbe40_0 .net "A0", 0 0, v0x5c88f34e4270_0;  1 drivers
+v0x5c88f34e3d00_0 .net "A1", 0 0, v0x5c88f34e4330_0;  1 drivers
+v0x5c88f34e3dc0_0 .net "A2", 0 0, v0x5c88f34e4400_0;  1 drivers
+v0x5c88f34e3e60_0 .net "A3", 0 0, v0x5c88f34e4500_0;  1 drivers
+v0x5c88f34e3f20_0 .net "Y0", 0 0, o0x7cc4fa88a0d8;  alias, 0 drivers
+v0x5c88f34e4030_0 .net "Y1", 0 0, L_0x5c88f34e4900;  alias, 1 drivers
+v0x5c88f34e40f0_0 .net "YO", 0 0, L_0x5c88f34e4790;  1 drivers
+L_0x5c88f34e4790 .arith/sum 1, v0x5c88f34e4500_0, v0x5c88f34e4330_0;
+L_0x5c88f34e4900 .arith/sum 1, v0x5c88f34e4500_0, v0x5c88f34e4400_0;
+    .scope S_0x5c88f34bcbf0;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "encoder.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5c88f34bcbf0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4270_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4330_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4400_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c88f34e4500_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 23 "$display", "A0 = %b | A1 = %b | A2 = %b | A3 = %b || Y0 = %b || Y1 = %b", v0x5c88f34e4270_0, v0x5c88f34e4330_0, v0x5c88f34e4400_0, v0x5c88f34e4500_0, v0x5c88f34e45d0_0, v0x5c88f34e46c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4270_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4330_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c88f34e4400_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4500_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 27 "$display", "A0 = %b | A1 = %b | A2 = %b | A3 = %b || Y0 = %b || Y1 = %b", v0x5c88f34e4270_0, v0x5c88f34e4330_0, v0x5c88f34e4400_0, v0x5c88f34e4500_0, v0x5c88f34e45d0_0, v0x5c88f34e46c0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4270_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c88f34e4330_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4400_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4500_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 31 "$display", "A0 = %b | A1 = %b | A2 = %b | A3 = %b || Y0 = %b || Y1 = %b", v0x5c88f34e4270_0, v0x5c88f34e4330_0, v0x5c88f34e4400_0, v0x5c88f34e4500_0, v0x5c88f34e45d0_0, v0x5c88f34e46c0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c88f34e4270_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4330_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4400_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c88f34e4500_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 35 "$display", "A0 = %b | A1 = %b | A2 = %b | A3 = %b || Y0 = %b || Y1 = %b", v0x5c88f34e4270_0, v0x5c88f34e4330_0, v0x5c88f34e4400_0, v0x5c88f34e4500_0, v0x5c88f34e45d0_0, v0x5c88f34e46c0_0 {0 0 0};
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "encoder_tb.v";
+    "encoder.v";

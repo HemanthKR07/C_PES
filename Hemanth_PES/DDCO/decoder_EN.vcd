@@ -1,0 +1,53 @@
+$date
+	Wed Aug 28 13:59:19 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module decoder_En_tb $end
+$var wire 1 ! a3 $end
+$var wire 1 " a2 $end
+$var wire 1 # a1 $end
+$var wire 1 $ a0 $end
+$var reg 1 % d0 $end
+$var reg 1 & d1 $end
+$var reg 1 ' e $end
+$scope module uut $end
+$var wire 1 $ A0 $end
+$var wire 1 # A1 $end
+$var wire 1 " A2 $end
+$var wire 1 ! A3 $end
+$var wire 1 % D0 $end
+$var wire 1 & D1 $end
+$var wire 1 ' E $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#20
+1&
+#40
+1"
+1'
+0&
+1%
+#60
+0"
+0'
+1&
+#80
