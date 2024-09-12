@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch and Display Video</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <video id="myVideo" controls></video>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://www.w3schools.com/html/mov_bbb.mp4",
+                type: "GET",
+                dataType: "blob",
+                success: function(data) {
+                    var videoURL = URL.createObjectURL(data);
+                    $("#myVideo").attr("src", videoURL);
+                },
+                error: function() {
+                    console.log("Error fetching video");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
