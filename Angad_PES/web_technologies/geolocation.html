@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
     <script>
         function getpos(){
-            navigator.geolocation.getCurrentPosition(show, error);
+            navigator.geolocation.watchPosition(show, error);
         }
 
         function show(position){
@@ -15,10 +16,6 @@
             document.getElementById("lat").innerHTML = lat;
             document.getElementById("lon").innerHTML = lon;
             document.getElementById("acc").innerHTML = acc;
-            document.getElementById("alt").innerHTML = alt;
-            document.getElementById("altacc").innerHTML = altacc;
-            document.getElementById("head").innerHTML = head;
-            document.getElementById("speed").innerHTML = speed;
         }
 
         function error(err){
@@ -30,10 +27,6 @@
         <p>Latitude: <span id="lat"></span></p>
         <p>Longitude: <span id="lon"></span></p>
         <p>Accuracy: <span id="acc"></span></p>
-        <p>Altitude: <span id="alt"></span></p>
-        <p>Altitude Accuracy: <span id="altacc"></span></p>
-        <p>Heading: <span id="head"></span></p>
-        <p>Speed: <span id="speed"></span></p>
         <p id="error"></p>
     </body>
 </html>
