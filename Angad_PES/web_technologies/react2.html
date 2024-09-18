@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title> React</title>
+		<script crossdomain src="https://unpkg.com/react@17/umd/react.development.js ">
+		</script>
+		<script crossdomain src="https://unpkg.com/react-dom@17/umd/react-dom.development.js">
+		</script>
+		<script crossdomain src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js ">
+		</script>	
+				
+	</head>
+	<body >
+        <div id="root">
+        </div>
+        <script type="text/babel">
+        var dest=document.getElementById("root")
+        
+    class Hello extends React.Component
+        {
+            render()
+            {
+                return <div className={this.props.type}>
+                    <h1>{this.props.children}</h1>
+                    </div>
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <Hello type="greeting">Hello Batman</Hello>
+                <Hello type="welcome">Ironman</Hello>
+                </div>,dest
+
+        )
+    </script>
+    </body>
+    </html>
