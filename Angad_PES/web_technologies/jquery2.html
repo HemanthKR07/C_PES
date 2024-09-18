@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.js">
+        </script>
+    </head>
+    <body>
+        <div id="div1" style="position:absolute">
+            Webtech
+        </div>
+        <br>
+        <br>
+        <p id="p1">Hellooo</p>
+        <button id="btn1">ClickMe</button>
+        <button id="btn2">Animate</button>
+        <!--Chaining-->
+        <script>
+            $(document).ready(function()
+            {
+                $('#btn1').click(function()
+                {
+                    $('#p1').css("color","green")
+                    .slideUp(2000)
+                    .slideDown(2000) 
+                })
+                    $('#btn2').click(function()
+                {
+                    $("#div1").animate({left:'250px'})   
+                })
+            })
+        </script>
