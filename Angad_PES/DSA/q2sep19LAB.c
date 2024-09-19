@@ -1,34 +1,54 @@
-void deleteNode(CircularLinkedList *list, Node *prev, Node *current) {
-    if (list->head == NULL || current == NULL) {
-        return;
-    }
+#include <stdio.h>
 
-    if (current == list->head) {
-        list->head = current->next;
+void costcalc(int *queue, int *stack, int *top, int *f, int *r, int *sum, int n) {
+    while (*f != *r) {
+        if (*top < 0) break; // Stack is empty
+
+        int served = 0;
+        for (int i = 0; i < n; i++) {
+            if (queue[*f] == stack[*top]) {
+                // Customer buys the dish
+                if (stack[*top] == 0) {
+                    *sum += 50;
+                } else {
+                    *sum += 40;
+                }
+                (*top)--; // Remove the dish from the stack
+                (*f)++; // Move to the next customer
+                served = 1;
+                break;
+            } else {
+                // Move customer to the end of the queue
+                queue[*r] = queue[*f];
+                (*f)++;
+                (*r)++;
+            }
+        }
+        if (!served) break; // No customer wants the dish on top of the stack
     }
-    if (current == list->tail) {
-        list->tail = prev;
-    }
-    prev->next = current->next;
-    free(current);
-    list->size--;
 }
 
-void josephus(CircularLinkedList *list, int k) {
-    if (list->head == NULL || k <= 0) {
-        return;
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int queue[n * 2]; // Double the size to handle circular queue
+    int stack[n];
+    int top = n - 1;
+    int f = 0, r = n;
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &queue[i]);
     }
 
-    Node *current = list->head;
-    Node *prev = list->tail;
-
-    while (list->size > 3) {
-        for (int i = 1; i < k; i++) {
-            prev = current;
-            current = current->next;
-        }
-        Node *toDelete = current;
-        current = current->next;
-        deleteNode(list, prev, toDelete);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &stack[i]);
     }
+
+    costcalc(queue, stack, &top, &f, &r, &sum, n);
+
+    printf("%d\n", sum);
+
+    return 0;
 }
