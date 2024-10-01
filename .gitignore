@@ -1,3 +1,7 @@
 **/venv/
 venv/
 **/node_modules/
+*.vcd
+*.out
+**.vcd
+**.out
