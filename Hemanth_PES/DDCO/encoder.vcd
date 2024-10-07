@@ -1,5 +1,5 @@
 $date
-	Tue Aug 27 21:59:17 2024
+	Sun Oct  6 23:54:31 2024
 $end
 $version
 	Icarus Verilog
@@ -25,9 +25,6 @@ $var wire 1 " Y1 $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
-$comment Show the parameter values. $end
-$dumpall
-$end
 #0
 $dumpvars
 1'
