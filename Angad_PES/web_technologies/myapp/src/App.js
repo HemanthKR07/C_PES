@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
 function App() {
   return (
@@ -23,3 +25,18 @@ function App() {
 }
 
 export default App;
+
+function Demo() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<Demo />, document.getElementById('root'));

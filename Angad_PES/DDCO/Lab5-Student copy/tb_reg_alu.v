@@ -47,9 +47,18 @@ module tb;
   initial {sel, wr, op, rd_addr_a, rd_addr_b, wr_addr, d_in} = 0;
   reg_alu reg_alu_0 (clk, reset, sel, wr, op, rd_addr_a, rd_addr_b, wr_addr, d_in,
   d_out_a, d_out_b, cout);
+
+initial begin
+    $monitor("At time %0t, sel=%b, wr=%b, op=%b, rd_addr_a=%b, rd_addr_b=%b, wr_addr=%b, d_in=%h, d_out_a=%h, d_out_b=%h, cout=%b",
+             $time, sel, wr, op, rd_addr_a, rd_addr_b, wr_addr, d_in, d_out_a, d_out_b, cout);
+  end
+
   initial begin
     #6 for(i=0;i<`TESTVECS;i=i+1)
-      begin #10 {sel, wr, op, rd_addr_a, rd_addr_b, wr_addr, d_in}=test_vecs[i]; end
+      begin #10 {sel, wr, op, rd_addr_a, rd_addr_b, wr_addr, d_in}=test_vecs[i]; 
+    end
     #100 $finish;
   end
+
+
 endmodule
