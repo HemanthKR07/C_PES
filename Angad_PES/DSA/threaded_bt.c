@@ -7,8 +7,8 @@ typedef struct node{
     int rthread;
     struct node *left;
     struct node *right;
-}
-NODE;
+}NODE;
+
 NODE* createNode(int data){
     NODE *nn=(NODE*)malloc(sizeof(NODE));
     nn->data=data;
