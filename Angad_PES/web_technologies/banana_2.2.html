@@ -1,0 +1,48 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+
+    <h3>Before:</h3>
+    <input type="text" id="filterInput" placeholder="Enter class to filter">
+    <button id="filterButton">Filter</button>
+
+    <h3>III Sem Subjects</h3>
+    <p class="intro">DDCO</p>
+    <p class="intro">DSA</p>
+    <p class="mcse">MCSE</p>
+    <p class="intro">WT</p>
+    <p class="afll">AFLL</p>
+
+    <button id="changeColorButton">Change Text Color</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#filterButton").click(function() {
+                var filterClass = $("#filterInput").val().trim();
+                $("p").hide();
+                $("." + filterClass).show();
+            });
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            $("#changeColorButton").click(function() {
+                var element = $("p.intro:first"); 
+                var newColor = getRandomColor();
+
+                element.fadeOut(500, function() {
+                    element.css("color", newColor);
+                    element.fadeIn(500);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

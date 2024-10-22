@@ -1,0 +1,28 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+    <h3>Before:</h3>
+    <input type="text" id="filterInput" placeholder="Enter class to filter">
+    <button id="filterButton">Filter</button>
+
+    <h3>III Sem Subjects</h3>
+    <p class="intro">DDCO</p>
+    <p class="intro">DSA</p>
+    <p class="mcse">MCSE</p>
+    <p class="intro">WT</p>
+    <p class="afll">AFLL</p>
+
+    <script>
+        $(document).ready(function() {
+            $("#filterButton").click(function() {
+                var filterClass = $("#filterInput").val().trim();
+                
+                $("p").hide();
+                
+                $("." + filterClass).show();
+            });
+        });
+    </script>
+
+</body>
+</html>

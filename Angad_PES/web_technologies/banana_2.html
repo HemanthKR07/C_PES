@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Method Chaining</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h3>Before:</h3>
+    <p id="myParagraph">Method Chaining</p>
+    <button id="myButton">Click</button>
+
+    <h3>After:</h3>
+    <p id="afterParagraph">Method Chaining</p>
+    <button id="afterButton">Click</button>
+
+    <script>
+        $(document).ready(function() {
+            // Functionality for the 'Before' button
+            $("#myButton").click(function() {
+                $("#myParagraph").fadeOut(1000)  // Step 1: Fade out
+                                  .slideUp(1000)   // Step 2: Slide up
+                                  .slideDown(1000); // Step 3: Slide down
+            });
+
+            // Functionality for the 'After' button
+            $("#afterButton").click(function() {
+                $("#afterParagraph").fadeOut(1000)  // Step 1: Fade out
+                                     .slideUp(1000)   // Step 2: Slide up
+                                     .slideDown(1000); // Step 3: Slide down
+            });
+        });
+    </script>
+
+</body>
+</html>
