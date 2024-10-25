@@ -1,0 +1,20 @@
+touch 2.txt
+touch 1.txt
+mkdir 7
+mkdir 5
+mkdir 3
+print
+cd 3
+ls
+touch hello.txt
+ls
+cd ..
+print
+ls
+cd 7
+touch 3.txt
+mkdir 3
+ls
+print
+cd ..
+print
