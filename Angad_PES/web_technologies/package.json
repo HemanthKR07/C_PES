@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chalk": "^5.3.0",
+    "mongodb": "^6.10.0",
     "nodemon": "^3.1.7",
     "validator": "^13.12.0"
   },
